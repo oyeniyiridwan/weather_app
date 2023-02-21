@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:weather_app/model/weather_model.dart';
+import 'package:weather_app/utils/colors.dart';
 
 class Carousel extends StatelessWidget {
   final Function(String s, bool value) checkHandler;
@@ -30,7 +31,7 @@ class Carousel extends StatelessWidget {
                   Text(
                     '${weather.name}, ${weather.sys!.country}',
                     style: TextStyle(
-                      color: Colors.white,
+                      color: AppColor.whiteColor,
                       fontSize: 20.sp,
                       fontWeight: FontWeight.bold,
                     ),
@@ -41,7 +42,7 @@ class Carousel extends StatelessWidget {
                       Text(
                         '${weather.main?.temp!.round()}°c',
                         style: TextStyle(
-                          color: Colors.white,
+                          color: AppColor.whiteColor,
                           fontSize: 50.sp,
                           fontWeight: FontWeight.bold,
                         ),
@@ -56,7 +57,7 @@ class Carousel extends StatelessWidget {
                           Text(
                             weather.weather!.description.toString(),
                             style: TextStyle(
-                              color: Colors.white,
+                              color: AppColor.whiteColor,
                               fontSize: 15.sp,
                               fontStyle: FontStyle.italic,
                               fontWeight: FontWeight.normal,
@@ -70,7 +71,7 @@ class Carousel extends StatelessWidget {
                   Text(
                       "Max: ${weather.main!.tempMax}°c, Min: ${weather.main!.tempMin}°c",
                       style: TextStyle(
-                        color: Colors.white,
+                        color: AppColor.whiteColor,
                         fontSize: 15.sp,
                         fontWeight: FontWeight.bold,
                       )),
@@ -78,7 +79,7 @@ class Carousel extends StatelessWidget {
                   Text(
                     "Wind: ${weather.wind!.speed}m/s",
                     style: TextStyle(
-                      color: Colors.white,
+                      color: AppColor.whiteColor,
                       fontSize: 15.sp,
                       fontWeight: FontWeight.bold,
                     ),
@@ -97,11 +98,11 @@ class Carousel extends StatelessWidget {
             },
             child: Container(
               decoration: const BoxDecoration(
-                  shape: BoxShape.circle, color: Color(0xff3fa9df)),
+                  shape: BoxShape.circle, color: AppColor.secondaryColor),
               child: const Icon(
                 Icons.close,
                 size: 15,
-                color: Colors.white,
+                color: AppColor.whiteColor,
               ),
             ),
           ),

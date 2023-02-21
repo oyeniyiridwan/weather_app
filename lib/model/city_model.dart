@@ -11,14 +11,14 @@ class City {
 
   City(
       {this.city,
-        this.lat,
-        this.lng,
-        this.country,
-        this.iso2,
-        this.adminName,
-        this.capital,
-        this.population,
-        this.populationProper});
+      this.lat,
+      this.lng,
+      this.country,
+      this.iso2,
+      this.adminName,
+      this.capital,
+      this.population,
+      this.populationProper});
 
   City.fromJson(Map<String, dynamic> json) {
     city = json['city'];

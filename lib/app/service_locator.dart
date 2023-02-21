@@ -7,7 +7,7 @@ import 'package:weather_app/services/shared_preference_service.dart';
 
 final apiService = locator<ApiService>();
 final connectivityService = locator<ConnectivityService>();
- final sharedPreferencesService = locator<SharedPreferenceService>();
+final sharedPreferencesService = locator<SharedPreferenceService>();
 final snackbarService = locator<SnackbarService>();
 final locationService = locator<LocationService>();
 final navigationService = locator<NavigationService>();

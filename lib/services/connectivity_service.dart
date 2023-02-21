@@ -2,12 +2,13 @@ import 'dart:async';
 import 'dart:io';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:weather_app/app/app.logger.dart';
+
 class ConnectivityService {
   final log = getLogger('ConnectivityService');
   final Connectivity _connectivity = Connectivity();
   bool hasConnection = false;
   StreamController<bool> connectionChangeController =
-  StreamController.broadcast();
+      StreamController.broadcast();
   Stream<bool> get connectionChange => connectionChangeController.stream;
   ConnectivityService() {
     log.i('ConnectivityService initialised');
@@ -31,12 +32,15 @@ class ConnectivityService {
     }
     return hasConnection;
   }
+
   void _connectionChange(ConnectivityResult result) {
     checkInternetConnection();
   }
+
   void onChange() {
     _connectivity.onConnectivityChanged.listen(_connectionChange);
   }
+
   void dispose() {
     connectionChangeController.close();
   }

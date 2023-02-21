@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+
 class ApiUtils {
   static ApiResponse toApiResponse(Response? res) {
     if (res == null) {

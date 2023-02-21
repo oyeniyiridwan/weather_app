@@ -9,27 +9,25 @@ import 'package:weather_app/services/shared_preference_service.dart';
 import 'package:weather_app/ui/view/home_page/home_page_view.dart';
 
 @StackedApp(
-  routes:[
-    CustomRoute(
-      page: HomePageView,
-      transitionsBuilder: TransitionsBuilders.fadeIn,
-      durationInMilliseconds: 200,
-      reverseDurationInMilliseconds: 200,
-      initial: true,
-    ),
-  ],
-  logger: StackedLogger(),
-  dependencies:[
-     Singleton(classType: ConnectivityService),
-    Singleton(classType: ApiService),
-    LazySingleton(classType: NavigationService),
-    LazySingleton(classType: SnackbarService),
+    routes: [
+      CustomRoute(
+        page: HomePageView,
+        transitionsBuilder: TransitionsBuilders.fadeIn,
+        durationInMilliseconds: 200,
+        reverseDurationInMilliseconds: 200,
+        initial: true,
+      ),
+    ],
+    logger: StackedLogger(),
+    dependencies: [
+      Singleton(classType: ConnectivityService),
+      Singleton(classType: ApiService),
+      LazySingleton(classType: NavigationService),
+      LazySingleton(classType: SnackbarService),
       LazySingleton(classType: LocationService),
-    Presolve(
-      classType: SharedPreferenceService,
-      presolveUsing: SharedPreferences.getInstance,
-    ),
-  ]
-
-)
-class App{}
+      Presolve(
+        classType: SharedPreferenceService,
+        presolveUsing: SharedPreferences.getInstance,
+      ),
+    ])
+class App {}

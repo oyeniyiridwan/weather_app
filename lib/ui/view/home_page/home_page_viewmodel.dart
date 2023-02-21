@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'package:weather_app/app/service_locator.dart';
 import 'package:weather_app/model/weather_model.dart';
@@ -10,7 +11,7 @@ class HomePageViewModel extends BaseViewModel {
   bool isBusy = true;
   final List<String> _savedCitiesName =
       sharedPreferencesService.getStringList('listOfCities') ??
-          ['Abuja', 'Ibadan'];
+          ['Abuja', 'Ibadan', 'Onitsha'];
   String get defaultCity =>
       sharedPreferencesService.getString('default') ?? 'Lagos';
   String? _value;
@@ -30,7 +31,6 @@ class HomePageViewModel extends BaseViewModel {
     for (var item in response) {
       temporary.add(item.city.toString());
     }
-    // cities = temporary;
     for (var item in temporary) {
       cities.addEntries({item: _savedCitiesName.contains(item)}.entries);
     }
@@ -60,8 +60,14 @@ class HomePageViewModel extends BaseViewModel {
   }
 
   initialize() async {
-    await getSavedCities();
-    await getWeatherInfoDefault();
+    debugPrint(_value);
+    if (_value != null) {
+      defaultCityWeather = await apiService.getCurrentLocationWeather();
+    } else {
+      await getWeatherInfoDefault();
+      await getSavedCities();
+    }
+
     await getWeatherInfoForSavedCities();
   }
 

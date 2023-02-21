@@ -7,7 +7,8 @@ import 'package:weather_app/ui/view/home_page/widget/default_card.dart';
 import 'package:weather_app/ui/view/home_page/widget/drawer.dart';
 import 'package:weather_app/ui/view/home_page/home_page_viewmodel.dart';
 import 'package:weather_app/ui/view/home_page/widget/carousel_list.dart';
-import 'package:weather_app/utils/api_constant.dart';
+import 'package:weather_app/utils/colors.dart';
+import 'package:weather_app/utils/constant.dart';
 
 class HomePageView extends StatelessWidget {
   const HomePageView({Key? key}) : super(key: key);
@@ -24,7 +25,8 @@ class HomePageView extends StatelessWidget {
             inAsyncCall: model.isBusy,
             color: Colors.transparent,
             progressIndicator: const CircularProgressIndicator(
-              color: Colors.orange,
+              strokeWidth: 5,
+              color: AppColor.secondaryColor,
             ),
             child: Scaffold(
               appBar: AppBar(
@@ -82,8 +84,8 @@ class HomePageView extends StatelessWidget {
                             dotsCount: model.weathers.length,
                             position: model.currentIndex.toDouble(),
                             decorator: const DotsDecorator(
-                              color: Colors.grey,
-                              activeColor: Colors.white,
+                              color: AppColor.greyColor2,
+                              activeColor: AppColor.whiteColor,
                             ),
                           )
                       ],

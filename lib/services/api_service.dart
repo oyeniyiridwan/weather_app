@@ -1,14 +1,14 @@
 import 'package:dio/dio.dart';
 import 'package:weather_app/app/app.logger.dart';
 import 'package:weather_app/app/service_locator.dart';
-import 'package:weather_app/utils/api_constant.dart';
+import 'package:weather_app/utils/constant.dart';
 import 'package:weather_app/utils/api_response_handler.dart';
 import 'package:weather_app/utils/enum.dart';
 
-class ApiService{
+class ApiService {
   final dio = Dio();
   final log = getLogger('ApiService');
-  ApiService(){
+  ApiService() {
     dio.options.sendTimeout = 30000;
     dio.options.receiveTimeout = 30000;
     dio.options.baseUrl = baseUrl;
@@ -16,24 +16,25 @@ class ApiService{
   }
 
   Future<ApiResponse?> get(
-      String path,{ Map<String, dynamic>? queryParameters,
-      }
-      )async{
+    String path, {
+    Map<String, dynamic>? queryParameters,
+  }) async {
     ApiResponse? res;
-    if(connectivityService.hasConnection){
+    if (connectivityService.hasConnection) {
       log.i('Making request to $path');
       try {
-        final response = await dio.get(path,
-            queryParameters: queryParameters,
+        final response = await dio.get(
+          path,
+          queryParameters: queryParameters,
         );
         res = ApiUtils.toApiResponse(response);
         return res;
-      }on DioError catch(e){
+      } on DioError catch (e) {
         log.wtf('From $path  - ${e.response?.data?.toString()}');
         res = ApiUtils.toApiResponse(e.response);
         return res;
       }
-    }else {
+    } else {
       snackbarService.showCustomSnackBar(
         message: 'Please check your internet',
         variant: SnackBarType.failure,
@@ -41,5 +42,5 @@ class ApiService{
       );
       return null;
     }
-}
+  }
 }

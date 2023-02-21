@@ -164,16 +164,5 @@
     "capital": "minor", 
     "population": "736072", 
     "population_proper": "213961"
-  },
-  {
-    "city": "Enugu", 
-    "lat": "6.4403", 
-    "lng": "7.4942", 
-    "country": "Nigeria", 
-    "iso2": "NG", 
-    "admin_name": "Enugu", 
-    "capital": "admin", 
-    "population": "715774", 
-    "population_proper": "715774"
   }
 ]

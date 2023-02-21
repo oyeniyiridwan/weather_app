@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:weather_app/utils/colors.dart';
 
 class MyDrawer extends StatelessWidget {
   final Map<String, bool> cities;
@@ -21,13 +22,13 @@ class MyDrawer extends StatelessWidget {
         appBar: PreferredSize(
           preferredSize: Size(1.sw, 0.1.sh),
           child: AppBar(
-            backgroundColor: const Color(0xff3fa9df),
+            backgroundColor: AppColor.secondaryColor,
             centerTitle: true,
             automaticallyImplyLeading: false,
             title: Text(
               "Cities",
               style: TextStyle(
-                  color: Colors.black,
+                  color:AppColor.blackColor,
                   fontSize: 25.sp,
                   fontWeight: FontWeight.bold,
                   height: 2.h),
@@ -35,7 +36,7 @@ class MyDrawer extends StatelessWidget {
           ),
         ),
         body: Container(
-            color: Colors.white54,
+            color: Colors.transparent,
             child: ListView(
                 children: cities.keys.map((e) {
               return Row(
@@ -44,8 +45,8 @@ class MyDrawer extends StatelessWidget {
                     child: ListTile(
                       contentPadding: EdgeInsets.all(5.h),
                       title: Text(e),
-                      selectedTileColor: const Color(0xff3fa9df),
-                      selectedColor: Colors.white,
+                      selectedTileColor:AppColor.secondaryColor3,
+                      selectedColor: AppColor.whiteColor,
                       selected: (e == current),
                       onTap: () {
                         onPressed(e);
@@ -58,7 +59,7 @@ class MyDrawer extends StatelessWidget {
                       onChanged: (value) {
                         onChange(e, value!);
                       },
-                      activeColor: const Color(0xff3fa9df),
+                      activeColor:AppColor.secondaryColor,
                     )
                 ],
               );

@@ -1,4 +1,4 @@
-import 'package:weather_app/utils/api_constant.dart';
+import 'package:weather_app/utils/constant.dart';
 
 class OpenWeather {
   Coord? coord;

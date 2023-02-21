@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
 import 'package:weather_app/model/weather_model.dart';
-import 'package:weather_app/utils/api_constant.dart';
+import 'package:weather_app/utils/colors.dart';
+import 'package:weather_app/utils/constant.dart';
 
 class DefaultCard extends StatelessWidget {
   final OpenWeather defaultCityWeather;
@@ -14,7 +15,7 @@ class DefaultCard extends StatelessWidget {
     return SizedBox(
       height: 0.5.sh,
       child: Card(
-        color: const Color(0xff3fa9df).withOpacity(0.4),
+        color:  AppColor.secondaryColor2,
         shape:
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.h)),
         child: Padding(
@@ -24,7 +25,7 @@ class DefaultCard extends StatelessWidget {
               Text(
                 '${defaultCityWeather.name ?? '__'}, ${defaultCityWeather.sys?.country ?? ''}',
                 style: TextStyle(
-                    color: Colors.white,
+                    color:AppColor.whiteColor,
                     fontSize: 25.sp,
                     fontWeight: FontWeight.bold,
                     height: 2.h),
@@ -38,7 +39,7 @@ class DefaultCard extends StatelessWidget {
                     Text(
                       DateFormat.yMMMEd().format(DateTime.now()),
                       style: TextStyle(
-                        color: Colors.white,
+                        color: AppColor.whiteColor,
                         fontSize: 18.sp,
                         fontWeight: FontWeight.bold,
                       ),
@@ -47,7 +48,7 @@ class DefaultCard extends StatelessWidget {
                     Text(
                       DateFormat.jm().format(DateTime.now()),
                       style: TextStyle(
-                        color: Colors.white,
+                        color: AppColor.whiteColor,
                         fontSize: 22.sp,
                         fontWeight: FontWeight.w300,
                       ),
@@ -62,7 +63,7 @@ class DefaultCard extends StatelessWidget {
                     child: Text(
                       '${defaultCityWeather.main?.temp!.round() ?? '__'}°c',
                       style: TextStyle(
-                        color: Colors.white,
+                        color: AppColor.whiteColor,
                         fontSize: 50.sp,
                         fontWeight: FontWeight.normal,
                       ),
@@ -75,7 +76,7 @@ class DefaultCard extends StatelessWidget {
                       Text(
                         defaultCityWeather.weather?.description ?? '...',
                         style: TextStyle(
-                          color: Colors.white,
+                          color: AppColor.whiteColor,
                           fontSize: 15.sp,
                           fontStyle: FontStyle.italic,
                           fontWeight: FontWeight.normal,
@@ -89,7 +90,7 @@ class DefaultCard extends StatelessWidget {
               Text(
                   "Max: ${defaultCityWeather.main?.tempMax ?? '__'}°c, Min: ${defaultCityWeather.main?.tempMin ?? '__'}°c",
                   style: TextStyle(
-                    color: Colors.white,
+                    color: AppColor.whiteColor,
                     fontSize: 15.sp,
                     fontWeight: FontWeight.w400,
                   )),
@@ -97,7 +98,7 @@ class DefaultCard extends StatelessWidget {
               Text(
                 "Wind: ${defaultCityWeather.wind?.speed ?? '__'}m/s",
                 style: TextStyle(
-                  color: Colors.white,
+                  color: AppColor.whiteColor,
                   fontSize: 15.sp,
                   fontWeight: FontWeight.w400,
                 ),
