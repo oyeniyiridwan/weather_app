@@ -20,7 +20,7 @@ class ApiService {
     Map<String, dynamic>? queryParameters,
   }) async {
     ApiResponse? res;
-    if (connectivityService.hasConnection) {
+    if (await connectivityService.checkInternetConnection()) {
       log.i('Making request to $path');
       try {
         final response = await dio.get(
