@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "193647970588",
+    "project_id": "shev-weather",
+    "storage_bucket": "shev-weather.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:193647970588:android:49d4c659489c2721be12d9",
+        "android_client_info": {
+          "package_name": "com.example.weather_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "193647970588-tk4598a9faeqs5ll8k91uukq2sgbjfvr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDeycUMaTEp1Yj-roYbGyTLHwvtVCnbNV0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "193647970588-tk4598a9faeqs5ll8k91uukq2sgbjfvr.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "193647970588-o504fcurgu0tb12v14raouq0csaghf82.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.weatherApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

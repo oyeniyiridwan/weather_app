@@ -106,6 +106,9 @@ class Weather {
       if (800 < json['id']) {
         backGround = cloud;
       }
+      else{
+        backGround = rain;
+      }
     }
   }
 
@@ -167,7 +170,7 @@ class Main {
 class Wind {
   num? speed;
   int? deg;
-  double? gust;
+  num? gust;
 
   Wind({this.speed, this.deg, this.gust});
 

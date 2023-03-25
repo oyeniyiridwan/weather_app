@@ -1,13 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 // **************************************************************************
-// StackedRouterGenerator
+// StackedNavigatorGenerator
 // **************************************************************************
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
+import 'package:flutter/material.dart' as _i3;
 import 'package:flutter/material.dart';
-import 'package:stacked/src/code_generation/router_annotation/transitions_builders.dart'
-    as _i3;
 import 'package:stacked/stacked.dart' as _i1;
 import 'package:stacked_services/stacked_services.dart' as _i4;
 import 'package:weather_app/ui/view/home_page/home_page_view.dart' as _i2;
@@ -28,11 +27,11 @@ class StackedRouter extends _i1.RouterBase {
 
   final _pagesMap = <Type, _i1.StackedRouteFactory>{
     _i2.HomePageView: (data) {
-      return PageRouteBuilder<dynamic>(
+      return _i3.PageRouteBuilder<dynamic>(
         pageBuilder: (context, animation, secondaryAnimation) =>
             const _i2.HomePageView(),
         settings: data,
-        transitionsBuilder: data.transition ?? _i3.TransitionsBuilders.fadeIn,
+        transitionsBuilder: data.transition ?? _i1.TransitionsBuilders.fadeIn,
         transitionDuration: const Duration(milliseconds: 200),
         reverseTransitionDuration: const Duration(milliseconds: 200),
       );

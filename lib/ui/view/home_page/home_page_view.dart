@@ -42,6 +42,14 @@ class HomePageView extends StatelessWidget {
                       icon: Icon(
                         Icons.location_on_outlined,
                         size: 30.h,
+                      )),
+                  IconButton(
+                      onPressed: () async {
+                        await model.createDynamicLink();
+                      },
+                      icon: Icon(
+                        Icons.share,
+                        size: 30.h,
                       ))
                 ],
               ),

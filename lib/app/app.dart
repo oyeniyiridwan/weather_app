@@ -4,7 +4,10 @@ import 'package:stacked_services/stacked_services.dart';
 import 'package:stacked/stacked_annotations.dart';
 import 'package:weather_app/services/api_service.dart';
 import 'package:weather_app/services/connectivity_service.dart';
+import 'package:weather_app/services/dynamic_service.dart';
+import 'package:weather_app/services/local_notification_service.dart';
 import 'package:weather_app/services/location_service.dart';
+import 'package:weather_app/services/push_notification_service.dart';
 import 'package:weather_app/services/shared_preference_service.dart';
 import 'package:weather_app/ui/view/home_page/home_page_view.dart';
 
@@ -29,5 +32,8 @@ import 'package:weather_app/ui/view/home_page/home_page_view.dart';
         classType: SharedPreferenceService,
         presolveUsing: SharedPreferences.getInstance,
       ),
+      LazySingleton(classType: DynamicService),
+      LazySingleton(classType: PushNotificationService),
+      LazySingleton(classType: LocalNotificationService),
     ])
-class App {}
+class App{}

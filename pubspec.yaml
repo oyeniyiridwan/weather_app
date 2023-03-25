@@ -31,8 +31,8 @@ dependencies:
   flutter:
     sdk: flutter
   logger: ^1.1.0
-  stacked: ^3.0.0
-  stacked_services: ^0.9.5
+  stacked: ^3.2.0
+  stacked_services: ^1.0.0
   analyzer: ^5.1.0
   dio: ^4.0.6
   connectivity_plus: ^2.3.8
@@ -40,21 +40,42 @@ dependencies:
   shared_preferences: ^2.0.13
   modal_progress_hud_nsn: ^0.3.0
   geolocator: ^9.0.2
+
+  #splash screen, also jump tp line 85 for settings
   flutter_native_splash: ^2.2.18
+
+
   intl:
   carousel_slider: ^4.2.1
   dots_indicator: ^2.1.0
+
+  #dynamic link:
+  firebase_dynamic_links:
+  firebase_core:
+  cloud_firestore:
+  share:
 
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
 
+  #push notification
+  firebase_messaging: ^14.3.0
+
+
+#local push notifications:
+  flutter_local_notifications: ^13.0.0
+  timezone:
+
+
+  firebase_analytics: ^10.1.6
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
   build_runner: ^2.1.11
-  stacked_generator: ^0.8.0+1
+  stacked_generator: ^1.0.0
 
 
   # The "flutter_lints" package below contains a set of recommended lints to
@@ -66,6 +87,8 @@ dev_dependencies:
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
+
+#splash screen settings
 flutter_native_splash:
   color: "#ffffff"
   image: "assets/images/logo.png"
